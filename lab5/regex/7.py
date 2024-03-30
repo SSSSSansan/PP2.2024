@@ -1,14 +1,8 @@
-import re
-snake = input()
-capital = snake.upper()
-camel = ""
-i = 0
-while(i != len(snake)):
-    if(snake[i] == '_'):
-        camel = camel + capital[i+1]
-        i = i + 2
-    else:
-        camel = camel + snake[i]
-        i = i + 1
+def snak(snake):
+    s = snake.split('_')
+    camel = s[0] + ''.join(word.title() for word in s[1:])  
+    return camel
 
-print(camel)
+snake_string = input()
+camel_string = snak(snake_string)
+print(camel_string)
